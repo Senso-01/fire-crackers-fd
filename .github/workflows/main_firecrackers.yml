@@ -29,7 +29,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: react-build
+          name: node-app 
           path: ./build
 
   deploy:
@@ -43,7 +43,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: react-build
+          name: node-app 
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -58,3 +58,4 @@ jobs:
           app-name: 'firecrackers'
           slot-name: 'Production'
           package: .
+
